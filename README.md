@@ -18,3 +18,11 @@ Se simula el entorno de TI de una pequeña empresa en crecimiento con tres depar
 - Implementar control de acceso basado en el principio de mínimo privilegio (RBAC/NTFS).
 - Desplegar servicios esenciales en Linux y Windows Server.
 - Configurar recolección de eventos y monitoreo centralizado de seguridad.
+
+## 📐 Arquitectura de Red y Subnetting
+
+| Host / VM | Sistema Operativo | Rol / Servicios | IP / Subnet |
+| :--- | :--- | :--- | :--- |
+| **DC01** | Windows Server 2025 | Active Directory, DNS Server | 192.168.10.10/24 |
+| **WS01** | Windows 10/11 Pro | Cliente Workstation (HR/Ventas) | DHCP (192.168.10.x) |
+| **SRV-LNX01** | Ubuntu Server 22.04 | Nginx / Agente SIEM / Log Collector | 192.168.10.20/24 |
