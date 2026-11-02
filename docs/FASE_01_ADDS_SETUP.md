@@ -21,4 +21,4 @@ Para el correcto funcionamiento de los servicios de directorio en un entorno cor
 ### Evidencia de Configuración
 Salida del comando `Get-NetIPConfiguration` en PowerShell:
 
-![Configuración de Red IP y DNS]<img width="619" height="145" alt="image" src="https://github.com/user-attachments/assets/bbcf0c8e-3303-4c60-b0f9-d1bf36ee3e47" />
+<img width="619" height="145" alt="image" src="https://github.com/user-attachments/assets/bbcf0c8e-3303-4c60-b0f9-d1bf36ee3e47" />
