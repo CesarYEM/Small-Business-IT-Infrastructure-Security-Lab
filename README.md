@@ -6,5 +6,3 @@ Un laboratorio práctico que simula la infraestructura tecnológica y las operac
 - [Fase 2: Servicios de Red, Almacenamiento y GPO](./docs/FASE_02_SERVICES_GPO.md) *(Próximamente)*
 - [Fase 3: Respaldos, Hardening y Monitoreo SIEM](./docs/FASE_03_BACKUP_SIEM.md) *(Próximamente)*
 - [Fase 4: Detección de Incidentes y Análisis de Logs](./docs/FASE_04_SOC_DETECTION.md) *(Próximamente)*
-
-- 
