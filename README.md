@@ -6,3 +6,15 @@ Un laboratorio práctico que simula la infraestructura tecnológica y las operac
 - [Fase 2: Servicios de Red, Almacenamiento y GPO](./docs/FASE_02_SERVICES_GPO.md) *(Próximamente)*
 - [Fase 3: Respaldos, Hardening y Monitoreo SIEM](./docs/FASE_03_BACKUP_SIEM.md) *(Próximamente)*
 - [Fase 4: Detección de Incidentes y Análisis de Logs](./docs/FASE_04_SOC_DETECTION.md) *(Próximamente)*
+
+## 🏢 Escenario Empresarial
+Se simula el entorno de TI de una pequeña empresa en crecimiento con tres departamentos activos:
+- **Recursos Humanos**
+- **Ventas**
+- **Administración**
+
+### Objetivos del Proyecto:
+- Centralizar la gestión de identidades, autenticación y políticas con Active Directory.
+- Implementar control de acceso basado en el principio de mínimo privilegio (RBAC/NTFS).
+- Desplegar servicios esenciales en Linux y Windows Server.
+- Configurar recolección de eventos y monitoreo centralizado de seguridad.
