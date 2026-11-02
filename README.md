@@ -7,7 +7,7 @@ Un laboratorio práctico que simula la infraestructura tecnológica y las operac
 - [Fase 3: Respaldos, Hardening y Monitoreo SIEM](./docs/FASE_03_BACKUP_SIEM.md) *(Próximamente)*
 - [Fase 4: Detección de Incidentes y Análisis de Logs](./docs/FASE_04_SOC_DETECTION.md) *(Próximamente)*
 
-## 🏢 Escenario Empresarial
+## Escenario
 Se simula el entorno de TI de una pequeña empresa en crecimiento con tres departamentos activos:
 - **Recursos Humanos**
 - **Ventas**
