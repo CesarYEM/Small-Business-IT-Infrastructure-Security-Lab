@@ -144,3 +144,34 @@ ad_domain = corp.cesartraining.com
 use_fully_qualified_names = False
 ldap_id_mapping = True
 ```
+#### C. Name Service Switch (/etc/nsswitch.conf)
+```
+passwd:         files sss
+group:          files sss
+shadow:         files sss
+```
+
+#### 5. Evidencia de Verificación y Resolución de Usuarios
+Prueba de resolución del usuario de Active Directory cmendoza (Carlos Mendoza) asignado al grupo de seguridad GRP_HR_RW:
+
+```
+cyem@cyem-ubuntu:~$ id cmendoza
+uid=1374201105(cmendoza) gid=137420513(grp_hr_rw) groups=137420513(grp_hr_rw)
+
+cyem@cyem-ubuntu:~$ getent passwd cmendoza
+cmendoza:*:1374201105:137420513:Carlos Mendoza:/home/cmendoza@corp.cesartraining.com:/bin/bash
+```
+
+#### 6. Registro de Solución de Problemas (Troubleshooting Log)
+
+# Error de Autenticación de Máquina (GSSAPI Error: Unspecified GSS failure):
+
+Problema: El secreto guardado en /etc/krb5.keytab perdió desincronización con la cuenta de equipo (CYEM-UBUNTU$) tras múltiples intentos de unión.
+
+Solución: Se desvinculó la máquina, se purgó la caché local (/var/lib/sss/db/*), y se re-generó el archivo de claves mediante sudo adcli join --domain=corp.cesartraining.com -U Administrador.
+
+# Resolución por Nombre Corto:
+
+Problema: El sistema solo reconocía al usuario pasando el FQDN completo (cmendoza@corp.cesartraining.com).
+
+Solución: Se ajustó use_fully_qualified_names = False en sssd.conf y se ejecutó sudo sss_cache -E.
