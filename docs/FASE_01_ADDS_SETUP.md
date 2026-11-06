@@ -154,13 +154,8 @@ shadow:         files sss
 #### 5. Evidencia de Verificación y Resolución de Usuarios
 Prueba de resolución del usuario de Active Directory cmendoza (Carlos Mendoza) asignado al grupo de seguridad GRP_HR_RW:
 
-```
-cyem@cyem-ubuntu:~$ id cmendoza
-uid=1374201105(cmendoza) gid=137420513(grp_hr_rw) groups=137420513(grp_hr_rw)
+<img width="1215" height="169" alt="image" src="https://github.com/user-attachments/assets/649c1cc7-0c14-4a81-ac9a-a715b52f3d0e" />
 
-cyem@cyem-ubuntu:~$ getent passwd cmendoza
-cmendoza:*:1374201105:137420513:Carlos Mendoza:/home/cmendoza@corp.cesartraining.com:/bin/bash
-```
 
 #### 6. Registro de Solución de Problemas (Troubleshooting Log)
 
