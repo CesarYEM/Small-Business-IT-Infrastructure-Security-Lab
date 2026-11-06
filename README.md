@@ -23,6 +23,6 @@ Se simula el entorno de TI de una pequeña empresa en crecimiento con tres depar
 
 | Host / VM | Sistema Operativo | Rol / Servicios | IP / Subnet |
 | :--- | :--- | :--- | :--- |
-| **DC01** | Windows Server 2025 | Active Directory, DNS Server | 192.168.10.10/24 |
-| **WS01** | Windows 10/11 Pro | Cliente Workstation (HR/Ventas) | DHCP (192.168.10.x) |
-| **SRV-LNX01** | Ubuntu Server 22.04 | Nginx / Agente SIEM / Log Collector | 192.168.10.20/24 |
+| **DC01** | Windows Server 2025 | Active Directory, DNS Server | 192.168.100.222/24 |
+| **WS01** | Windows 10/11 Pro | Cliente Workstation (HR/Ventas) | DHCP (192.168.100.x) |
+| **SRV-LNX01** | Ubuntu Server 22.04 | Nginx / Agente SIEM / Log Collector | 192.168.100.50/24 |
