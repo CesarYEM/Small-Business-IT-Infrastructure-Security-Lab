@@ -101,7 +101,7 @@ En esta fase se configuró el sistema cliente **Ubuntu Linux** para unirse al do
 
 ---
 
-### 2. Configuración Clave de Autenticación e Identidad
+### 4. Configuración Clave de Autenticación e Identidad
 
 #### A. Protocolo Kerberos (`/etc/krb5.conf`)
 Se definió la zona de autenticación indicando el Realm en mayúsculas y apuntando al Controlador de Dominio para la generación de tickets (`kinit`):
@@ -121,3 +121,26 @@ Se definió la zona de autenticación indicando el Realm en mayúsculas y apunta
 [domain_realm]
     .corp.cesartraining.com = CORP.CESARTRAINING.COM
     corp.cesartraining.com = CORP.CESARTRAINING.COM
+```
+
+#### B. Servicio de Servicios de Seguridad del Sistema (/etc/sssd/sssd.conf)
+Se configuró SSSD con mapeo de identidades POSIX automático (ldap_id_mapping = True) y deshabilitando el sufijo obligatorio (use_fully_qualified_names = False) para permitir consultas mediante nombres de usuario cortos:
+```
+[sssd]
+domains = corp.cesartraining.com
+config_file_version = 2
+services = nss, pam
+
+[domain/corp.cesartraining.com]
+default_shell = /bin/bash
+krb5_store_password_if_offline = True
+cache_credentials = True
+krb5_realm = CORP.CESARTRAINING.COM
+realmd_tags = manages-system joined-with-adcli
+id_provider = ad
+access_provider = permit
+fallback_homedir = /home/%u@%d
+ad_domain = corp.cesartraining.com
+use_fully_qualified_names = False
+ldap_id_mapping = True
+```
