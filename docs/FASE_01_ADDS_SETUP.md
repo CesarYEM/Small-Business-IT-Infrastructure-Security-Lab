@@ -85,3 +85,38 @@ foreach ($user in$Users) {
         Add-ADGroupMember -Identity $groupName -Members$samAccount -ErrorAction SilentlyContinue
     }
 }
+
+---
+
+## Fase 1: Integración del Cliente Linux (Ubuntu) en Active Directory
+
+En esta fase se configuró el sistema cliente **Ubuntu Linux** para unirse al dominio de Active Directory (`corp.cesartraining.com`), logrando la resolución centralizada de identidades mediante la pila **SSSD**, **Kerberos** y **NSS**.
+
+### 1. Arquitectura y Direccionamiento de Red
+- **Controlador de Dominio (Windows Server):** `DC01.corp.cesartraining.com` (`192.168.100.222`)
+- **Cliente Linux:** `cyem-ubuntu` (`192.168.100.x`)
+- **Dominio / Realm:** `corp.cesartraining.com` / `CORP.CESARTRAINING.COM`
+- **DNS Principal en Ubuntu:** `192.168.100.222`
+
+---
+
+### 2. Configuración Clave de Autenticación e Identidad
+
+#### A. Protocolo Kerberos (`/etc/krb5.conf`)
+Se definió la zona de autenticación indicando el Realm en mayúsculas y apuntando al Controlador de Dominio para la generación de tickets (`kinit`):
+
+```ini
+[libdefaults]
+    default_realm = CORP.CESARTRAINING.COM
+    dns_lookup_realm = false
+    dns_lookup_kdc = true
+
+[realms]
+    CORP.CESARTRAINING.COM = {
+        kdc = 192.168.100.222
+        admin_server = 192.168.100.222
+    }
+
+[domain_realm]
+    .corp.cesartraining.com = CORP.CESARTRAINING.COM
+    corp.cesartraining.com = CORP.CESARTRAINING.COM
