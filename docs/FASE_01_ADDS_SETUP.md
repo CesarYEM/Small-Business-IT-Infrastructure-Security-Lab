@@ -97,6 +97,7 @@ En esta fase se configuró el sistema cliente **Ubuntu Linux** para unirse al do
 - **Cliente Linux:** `cyem-ubuntu` (`192.168.100.x`)
 - **Dominio / Realm:** `corp.cesartraining.com` / `CORP.CESARTRAINING.COM`
 - **DNS Principal en Ubuntu:** `192.168.100.222`
+```
 
 ---
 
