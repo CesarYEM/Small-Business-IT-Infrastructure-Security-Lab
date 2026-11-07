@@ -88,9 +88,9 @@ foreach ($user in$Users) {
 ```
 ---
 
-## Fase 1: Integración del Cliente Linux (Ubuntu) en Active Directory
+## Integración del Cliente Linux (Ubuntu) en Active Directory
 
-En esta fase se configuró el sistema cliente **Ubuntu Linux** para unirse al dominio de Active Directory (`corp.cesartraining.com`), logrando la resolución centralizada de identidades mediante la pila **SSSD**, **Kerberos** y **NSS**.
+Se configuró el sistema cliente **Ubuntu Linux** para unirse al dominio de Active Directory (`corp.cesartraining.com`), logrando la resolución centralizada de identidades mediante la pila **SSSD**, **Kerberos** y **NSS**.
 
 #### Arquitectura y Direccionamiento de Red
 - **Controlador de Dominio (Windows Server):** `DC01.corp.cesartraining.com` (`192.168.100.222`)
@@ -100,7 +100,7 @@ En esta fase se configuró el sistema cliente **Ubuntu Linux** para unirse al do
 
 ---
 
-## 3. Configuración Clave de Autenticación e Identidad
+## 1. Configuración Clave de Autenticación e Identidad
 
 #### A. Protocolo Kerberos (`/etc/krb5.conf`)
 Se definió la zona de autenticación indicando el Realm en mayúsculas y apuntando al Controlador de Dominio para la generación de tickets (`kinit`):
@@ -150,13 +150,13 @@ group:          files sss
 shadow:         files sss
 ```
 
-## 4. Evidencia de Verificación y Resolución de Usuarios
+## 2. Evidencia de Verificación y Resolución de Usuarios
 Prueba de resolución del usuario de Active Directory cmendoza (Carlos Mendoza) asignado al grupo de seguridad GRP_HR_RW:
 
 <img width="1215" height="169" alt="image" src="https://github.com/user-attachments/assets/649c1cc7-0c14-4a81-ac9a-a715b52f3d0e" />
 
 
-## 5. Registro de Solución de Problemas (Troubleshooting Log)
+## 3. Registro de Solución de Problemas (Troubleshooting Log)
 
 # Error de Autenticación de Máquina (GSSAPI Error: Unspecified GSS failure):
 
