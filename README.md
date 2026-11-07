@@ -1,3 +1,19 @@
+# 🛡️ Active Directory & Linux Integration Lab (SSSD / Kerberos / RBAC)
+
+> **Project Status:** 🟢 **Phase 1 Complete** (AD & Ubuntu Integration) | 🟡 **Phase 2 In Progress** (PAM Access Control & Shares)
+
+---
+
+### 🇬🇧 Project Overview
+Enterprise-oriented homelab project demonstrating the integration of an Ubuntu Linux client into a Windows Server Active Directory domain (`corp.cesartraining.com`). Focused on centralized identity management, RBAC enforcement using PowerShell automation, Kerberos authentication, and SSSD/NSS identity mapping. Designed to reflect real-world SOC and System Administration scenarios.
+
+### 🇪🇸 Habilidades Demostradas (Key Skills)
+- **Active Directory & Identity Management:** Design of OUs, Security Groups, and automated user provisioning via PowerShell (`Create-ADStructure.ps1`).
+- **Linux Security & Authentication:** Realm joining, SSSD configuration, Kerberos ticket management, and NSS database mapping.
+- **Troubleshooting & Auditing:** Resolution of Kerberos GSSAPI desynchronization, keytab regeneration, and DNS/NTP alignment.
+
+---
+
 # Small-Business-IT-Infrastructure-Security-Lab
 Un laboratorio práctico que simula la infraestructura tecnológica y las operaciones de seguridad de una pequeña empresa. Diseñado para demostrar capacidades en administración de sistemas (Windows/Linux), servicios de red (Active Directory, DNS, SMB), políticas de grupo, respaldo de datos y monitoreo/detección de amenazas mediante SIEM.
 
