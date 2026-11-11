@@ -1,4 +1,4 @@
-# 🛡️ Active Directory & Linux Integration Lab (SSSD / Kerberos / RBAC)
+# Active Directory & Linux Integration Lab (SSSD / Kerberos / RBAC)
 
 > **Project Status:** 🟢 **Phase 1 Complete** (AD & Ubuntu Integration) | 🟡 **Phase 2 In Progress** (PAM Access Control & Shares)
 
@@ -42,3 +42,23 @@ Se simula el entorno de TI de una pequeña empresa en crecimiento con tres depar
 | **DC01** | Windows Server 2025 | Active Directory, DNS Server | 192.168.100.222/24 |
 | **WS01** | Windows 10/11 Pro | Cliente Workstation (HR/Ventas) | DHCP (192.168.100.x) |
 | **SRV-LNX01** | Ubuntu Server 22.04 | Nginx / Agente SIEM / Log Collector | 192.168.100.50/24 |
+
+---
+
+## Medida de Hardening y Zero Trust: Restricción de Unión de Equipos (Join Control)
+
+Por defecto en Active Directory, el atributo `ms-DS-MachineAccountQuota` permite que cualquier usuario autenticado sin privilegios una hasta 10 computadoras al dominio. Para alinearse a los principios de **Zero Trust (Confianza Cero)** y **Menor Privilegio**, se eliminó esta capacidad predeterminada.
+
+### 1. Modificación de la Cuota en Active Directory (GUI)
+1. En el Controlador de Dominio, se abrió la consola **Usuarios y equipos de Active Directory** (`dsa.msc`) habilitando las **Características avanzadas**.
+2. En las **Propiedades** de la raíz del dominio (`corp.cesartraining.com`), desde el **Editor de atributos**, se localizó la propiedad `ms-DS-MachineAccountQuota`.
+3. Se modificó el valor predeterminado de `10` a `0`.
+
+### 2. Prueba de Denegación de Acceso (Validación de Seguridad)
+Se ejecutó un intento de enrolamiento desde el cliente Linux utilizando la cuenta de un usuario estándar sin privilegios administrativos (`cmendoza`):
+
+```bash
+sudo realm join --verbose -U cmendoza corp.cesartraining.com
+```
+<img width="1213" height="702" alt="image" src="https://github.com/user-attachments/assets/a3ff3c2a-b4d5-45fa-8297-5424c1e6e03a" />
+
