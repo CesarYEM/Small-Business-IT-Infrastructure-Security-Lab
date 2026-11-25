@@ -1,6 +1,6 @@
 # Active Directory & Linux Integration Lab (SSSD / Kerberos / RBAC)
 
-> **Project Status:** 🟢 **Phase 1 Complete** (AD & Ubuntu Integration) | 🟡 **Phase 2 In Progress** (PAM Access Control & Shares)
+> **Project Status:** 🟢 **Phase 1 Complete** (AD & Ubuntu Integration) | 🟢 **Phase 2 In Complete** (PAM Access Control & Shares) | 🟡 **Phase 3 In progress** 
 
 ---
 
